@@ -254,6 +254,6 @@ bib_text = "\n\n".join(format_apa(p) for p in sorted_papers)
 st.download_button(
     label="Download bibliography (.txt)",
     data=bib_text,
-    file_name="criminal_governance_bibliography.txt",
+    file_name="what_works_against_crime_bibliography.txt",
     mime="text/plain",
 )

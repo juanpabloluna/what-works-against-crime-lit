@@ -306,11 +306,11 @@ def main():
         ### How to Ask Good Questions
 
         **Be Specific:**
-        - ✅ "What factors explain gang violence in Brazilian favelas?"
+        - ✅ "What policing strategies are most effective at reducing violent crime?"
         - ❌ "Tell me about crime"
 
         **Focus on Your Research Domain:**
-        - ✅ "How do criminal organizations provide governance in weak states?"
+        - ✅ "What is the evidence on hot spots policing effectiveness?"
         - ❌ "What is crime?"
 
         **Use Academic Framing:**

@@ -14,11 +14,11 @@ import streamlit as st
 from loguru import logger
 
 # Bump this on every deploy to force cache invalidation
-_APP_VERSION = "1.0"
+_APP_VERSION = "1.1"
 
 # Page configuration — must be the first Streamlit command
 st.set_page_config(
-    page_title="What Works Against Crime - Literature Expert",
+    page_title="Qu\u00e9 funciona contra el crimen?",
     page_icon="\U0001F4DA",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -99,11 +99,11 @@ def main():
 
     # Header
     st.markdown(
-        '<div class="main-header">What Works Against Crime - Literature Expert</div>',
+        '<div class="main-header">Qu\u00e9 funciona contra el crimen?</div>',
         unsafe_allow_html=True,
     )
     st.markdown(
-        '<div class="sub-header">RAG-based research assistant for crime prevention, policing, and public safety interventions</div>',
+        '<div class="sub-header">Asistente de investigaci\u00f3n basado en RAG para prevenci\u00f3n del crimen, pol\u00edticas de seguridad p\u00fablica e intervenciones policiales</div>',
         unsafe_allow_html=True,
     )
 

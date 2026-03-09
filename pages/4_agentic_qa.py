@@ -98,7 +98,7 @@ collections = None
 if use_collections:
     collections_input = st.sidebar.text_input(
         "Collections (comma-separated)",
-        help="Example: Criminal Governance, Violence",
+        help="Example: Hot spots policing, Focused deterrence",
     )
     if collections_input:
         collections = [c.strip() for c in collections_input.split(",")]
@@ -270,10 +270,10 @@ st.markdown("---")
 st.header("Example Questions")
 
 examples = [
-    "What are the main theories explaining why criminal organizations provide governance?",
-    "How do gangs interact with state institutions in Latin America?",
+    "What policing strategies are most effective at reducing violent crime?",
+    "What is the evidence on focused deterrence programs?",
     "What methodologies are used to evaluate crime prevention programs?",
-    "Compare violence levels across different types of criminal groups",
+    "How effective are hot spots policing strategies?",
     "What role does community engagement play in crime reduction?",
 ]
 
