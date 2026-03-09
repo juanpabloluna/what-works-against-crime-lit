@@ -4,7 +4,10 @@ from pathlib import Path
 from typing import List, Optional, Dict, Any
 
 import chromadb
-from chromadb.config import Settings as ChromaSettings
+try:
+    from chromadb.config import Settings as ChromaSettings
+except ImportError:
+    ChromaSettings = None
 from loguru import logger
 
 from src.config.settings import settings
@@ -34,10 +37,10 @@ class VectorStore:
 
         # Initialize ChromaDB client
         logger.info(f"Initializing ChromaDB at: {self.persist_directory}")
-        self.client = chromadb.PersistentClient(
-            path=str(self.persist_directory),
-            settings=ChromaSettings(anonymized_telemetry=False),
-        )
+        client_kwargs = {"path": str(self.persist_directory)}
+        if ChromaSettings is not None:
+            client_kwargs["settings"] = ChromaSettings(anonymized_telemetry=False)
+        self.client = chromadb.PersistentClient(**client_kwargs)
 
         # Get or create collection
         try:
