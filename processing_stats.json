@@ -1,0 +1,10 @@
+{
+  "total_items": 207,
+  "items_with_pdfs": 207,
+  "pdfs_processed": 207,
+  "pdfs_failed": 0,
+  "total_chunks": 1553,
+  "total_embeddings": 1553,
+  "processing_time": 36.36625003814697,
+  "failed_items": []
+}
