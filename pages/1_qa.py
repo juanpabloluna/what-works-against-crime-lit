@@ -179,6 +179,9 @@ def main():
 
     # Process question
     if ask_button and question:
+        # Clear previous answer so each question gets a fresh retrieval
+        st.session_state.current_answer = None
+
         # Show author detection feedback
         try:
             detected = qa_engine.retriever._detect_author_names(question)
@@ -189,9 +192,9 @@ def main():
         except AttributeError:
             st.caption("Author detection unavailable")
 
-        with st.spinner("🤔 Thinking... Retrieving relevant papers and generating answer..."):
+        with st.spinner("Retrieving relevant papers and generating answer..."):
             try:
-                # Generate answer
+                # Generate answer (fresh retrieval every time)
                 if use_history and st.session_state.qa_history:
                     answer = qa_engine.answer_with_conversation_history(
                         question=question,
@@ -208,8 +211,10 @@ def main():
                         max_year=max_year,
                     )
 
-                # Store in session state
+                # Store only current answer (no accumulation)
                 st.session_state.current_answer = answer
+                if not use_history:
+                    st.session_state.qa_history = []
                 st.session_state.qa_history.append({
                     "question": question,
                     "answer": answer.answer,
